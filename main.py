@@ -9,7 +9,6 @@ from bs4 import BeautifulSoup
 import requests
 from telegraph.api import Telegraph
 from script import script
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 SLBotsOfficial = Client(
     "WebScrapperBot",
