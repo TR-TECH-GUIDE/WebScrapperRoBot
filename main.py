@@ -46,17 +46,6 @@ async def about(client, message):
                 ]
             )
     
-ABOUT_TEXT = """
-● BOT: Web Scrapper Bot 
-● AUTHOR : Tharuk (https://t.me/TharukRenuja) 
-● SERVER : Heroku 
-● LIBRARY : Pyrogram 
-● LANGUAGE : Python 3.9
-
-© **Powered By** : 
-**@SLBotsOfficial** 👑
-"""
-    
 @SLBotsOfficial.on_message((filters.regex("https") | filters.regex("http") | filters.regex("www")) & (filters.forwarded | filters.reply | filters.private))
 
 async def scrapping(_, message: Message):
