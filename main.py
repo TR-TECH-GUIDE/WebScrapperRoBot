@@ -20,11 +20,12 @@ telegraph = Telegraph(
     access_token=os.environ.get("TELEGRAPH_TOKEN", "dbc6169e9c7b4871fd681d87c80f5f5371fd59bff01dc95eca546cdb41a1")
 )
 
-
-@SLBotsOfficial.on_message(filters.command(["start"]))
-async def start(_, message: Message):
+@Client.on_message(filters.command(["start"]) & filters.private)
+async def start(client, message):
     try:
-        await message.reply_text("I can Scrape a website within seconds.Send me A website link and Get Your results now Want To Know More About Web Scraping? Read Help"),
+        await message.reply_text(
+            text=script.START_MSG.format(message.from_user.mention),
+            disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -36,28 +37,57 @@ async def start(_, message: Message):
                             "⭕️ JOIN OUR CHANNEL ⭕️", url="https://t.me/SLBotsOfficial")
                     ]
                 ]
-            )
-        
-@SLBotsOfficial.on_message(filters.command(["help"]))
-async def help(_, message: Message):
-    await message.reply_text("Web scraping, web harvesting, or web data extraction is data scraping used for extracting data from websites. The web scraping software may directly access the World Wide Web using the Hypertext Transfer Protocol or a web browser.")
-
-@SLBotsOfficial.on_message(filters.command(["about"]))
-async def about(_, message):
-    await message.reply_text(
-            text=script.ABOUT_TEXT.format(message.from_user.mention),
+            ),
+            reply_to_message_id=message.message_id
+        )
+    except:
+        pass            
+            
+@Client.on_message(filters.command(["help"]) & filters.private)
+async def help(client, message):
+    try:
+        await message.reply_text(
+            text=script.HELP_MSG.format(message.from_user.mention),
+            disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("BACK", callback_data="help_data"),
-                        InlineKeyboardButton("START", callback_data="start_data"),
+                        InlineKeyboardButton("HOME", callback_data="start_data"),
+                        InlineKeyboardButton("ABOUT", callback_data="about_data"),
                     ],
                     [
                         InlineKeyboardButton(
                             "⭕️ JOIN OUR CHANNEL ⭕️", url="https://t.me/SLBotsOfficial")
                     ]
                 ]
-            )
+            ),
+            reply_to_message_id=message.message_id
+        )
+    except:
+        pass
+    
+@Client.on_message(filters.command(["about"]) & filters.private)
+async def about(client, message):
+    try:
+        await message.reply_text(
+            text=script.ABOUT_TEXT.format(message.from_user.mention),
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton("HELP", callback_data="help_data"),
+                        InlineKeyboardButton("HOME", callback_data="start_data"),
+                    ],
+                    [
+                        InlineKeyboardButton(
+                            "⭕️ JOIN OUR CHANNEL ⭕️", url="https://t.me/SLBotsOfficial")
+                    ]
+                ]
+            ),
+            reply_to_message_id=message.message_id
+        )
+    except:
+        pass
     
 @SLBotsOfficial.on_message((filters.regex("https") | filters.regex("http") | filters.regex("www")) & (filters.forwarded | filters.reply | filters.private))
 
