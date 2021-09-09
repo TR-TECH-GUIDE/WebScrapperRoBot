@@ -1,0 +1,6 @@
+pyrogram
+tgcrypto
+requests
+beautifulsoup4
+html5lib
+telegraph
