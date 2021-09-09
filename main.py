@@ -22,9 +22,46 @@ telegraph = Telegraph(
 
 @SLBotsOfficial.on_message(filters.command(["start"]))
 async def start(_, message: Message):
-    await message.reply_text("Join @SLBotsOfficial")  # Edit Your Start string here
+    await message.reply_text("I can Scrape a website within seconds. Send me A website link and Get Your results now Want To Know More About Web Scraping? Read Help")  # Edit Your Start string here
 
+@SLBotsOfficial.on_message(filters.command(["help"]))
+async def help(_, message: Message):
+    await message.reply_text("Web scraping, web harvesting, or web data extraction is data scraping used for extracting data from websites. The web scraping software may directly access the World Wide Web using the Hypertext Transfer Protocol or a web browser.")
 
+@SLBotsOfficial.on_message(filters.command(["about"]) & filters.private)
+async def about(client, message):
+    try:
+        await message.reply_text(
+            text=script.ABOUT_TEXT.format(message.from_user.mention),
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton("HELP", callback_data="help_data"),
+                        InlineKeyboardButton("ABOUT", callback_data="about_data"),
+                    ],
+                    [
+                        InlineKeyboardButton(
+                            "⭕️ JOIN OUR CHANNEL ⭕️", url="https://t.me/SLBotsOfficial")
+                    ]
+                ]
+            ),
+            reply_to_message_id=message.message_id
+        )
+    except:
+        pass
+    
+ABOUT_TEXT = """
+● BOT: Web Scrapper Bot 
+● AUTHOR : Tharuk (https://t.me/TharukRenuja) 
+● SERVER : Heroku 
+● LIBRARY : Pyrogram 
+● LANGUAGE : Python 3.9
+
+© **Powered By** : 
+**@SLBotsOfficial** 👑
+"""
+    
 @SLBotsOfficial.on_message((filters.regex("https") | filters.regex("http") | filters.regex("www")) & (filters.forwarded | filters.reply | filters.private))
 
 async def scrapping(_, message: Message):
