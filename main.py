@@ -118,8 +118,6 @@ async def scrapping(_, message: Message):
         await message.reply_text(text="No Paragraphs Found !!", disable_web_page_preview=True, quote=True)
         await txt.delete()
         return
-
-=======
 async def scrapping(bot,message):
  try:  # Extracting Raw Data From Webpage ( Unstructured format)
     txt = await message.reply_text("Validating Link")
