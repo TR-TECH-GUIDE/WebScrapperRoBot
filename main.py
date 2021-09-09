@@ -20,7 +20,7 @@ telegraph = Telegraph(
     access_token=os.environ.get("TELEGRAPH_TOKEN", "dbc6169e9c7b4871fd681d87c80f5f5371fd59bff01dc95eca546cdb41a1")
 )
 
-@Client.on_message(filters.command(["start"]) & filters.private)
+@SLBotsOfficial.on_message(filters.command(["start"]) & filters.private)
 async def start(client, message):
     try:
         await message.reply_text(
@@ -43,7 +43,7 @@ async def start(client, message):
     except:
         pass            
             
-@Client.on_message(filters.command(["help"]) & filters.private)
+@SLBotsOfficial.on_message(filters.command(["help"]) & filters.private)
 async def help(client, message):
     try:
         await message.reply_text(
@@ -66,7 +66,7 @@ async def help(client, message):
     except:
         pass
     
-@Client.on_message(filters.command(["about"]) & filters.private)
+@SLBotsOfficial.on_message(filters.command(["about"]) & filters.private)
 async def about(client, message):
     try:
         await message.reply_text(
