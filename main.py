@@ -28,7 +28,7 @@ async def start(_, message: Message):
 async def help(_, message: Message):
     await message.reply_text("Web scraping, web harvesting, or web data extraction is data scraping used for extracting data from websites. The web scraping software may directly access the World Wide Web using the Hypertext Transfer Protocol or a web browser.")
 
-@SLBotsOfficial.on_message(filters.command(["about"]) & filters.private)
+@SLBotsOfficial.on_message(filters.command(["about"]))
 async def about(client, message):
     try:
         await message.reply_text(
@@ -37,8 +37,8 @@ async def about(client, message):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("HELP", callback_data="help_data"),
-                        InlineKeyboardButton("ABOUT", callback_data="about_data"),
+                        InlineKeyboardButton("BACK", callback_data="help_data"),
+                        InlineKeyboardButton("START", callback_data="start_data"),
                     ],
                     [
                         InlineKeyboardButton(
