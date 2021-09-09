@@ -25,7 +25,7 @@ telegraph = Telegraph(
 @SLBotsOfficial.on_message(filters.command(["start"]))
 async def start(_, message: Message):
     await message.reply_text("I can Scrape a website within seconds. Send me A website link and Get Your results now Want To Know More About Web Scraping? Read Help")  # Edit Your Start string here
-                        reply_markup=InlineKeyboardMarkup(
+            reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton("HELP", callback_data="help_data"),
