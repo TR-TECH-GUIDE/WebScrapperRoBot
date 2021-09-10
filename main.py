@@ -28,8 +28,9 @@ async def start(client, message):
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                     [
-                        InlineKeyboardButton("❔ Help", url="http://t.me/WebScrappeBot?start=help"),InlineKeyboardButton("🔧About", url="http://t.me/WebScrappeBot?start=about")
-                    ],
+                        InlineKeyboardButton(
+                            "❔ Help", url="http://t.me/WebScrappeBot?start=help")
+                    ],                
                     [
                         InlineKeyboardButton(
                             "⭕️ JOIN OUR CHANNEL ⭕️", url="https://t.me/SLBotsOfficial")
@@ -48,6 +49,10 @@ async def help(client, message):
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
+                    [
+                        InlineKeyboardButton(
+                            "❔ About", url="http://t.me/WebScrappeBot?start=about")
+                    ],                    
                     [
                         InlineKeyboardButton(
                             "⭕️ JOIN OUR CHANNEL ⭕️", url="https://t.me/SLBotsOfficial")
