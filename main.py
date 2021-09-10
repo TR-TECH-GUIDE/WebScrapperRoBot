@@ -29,9 +29,9 @@ async def start(client, message):
             reply_markup=InlineKeyboardMarkup(
                     [
                         InlineKeyboardButton(
-                            text="❔ Help", url="http://t.me/WebScrappeBot?start=help"),
+                            "❔ Help", url="http://t.me/WebScrappeBot?start=help"),
                         InlineKeyboardButton(
-                            text="🔧About", url="http://t.me/WebScrappeBot?start=about"),
+                            "🔧About", url="http://t.me/WebScrappeBot?start=about"),
                     ],
                     [
                         InlineKeyboardButton(
