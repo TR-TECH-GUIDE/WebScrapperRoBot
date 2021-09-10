@@ -28,10 +28,13 @@ async def start(client, message):
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
-                    [
-                        InlineKeyboardButton("HELP", callback_data="help"),
-                        InlineKeyboardButton("ABOUT", callback_data="about"),
-                    ],
+                        InlineKeyboardButton(
+                            text="❔ Help", url="http://t.me/WebScrappeBot?start=help"
+                        ),
+                        InlineKeyboardButton(
+                            text="🔧About", url="http://t.me/WebScrappeBot?start=about"
+                        ),
+                ],
                     [
                         InlineKeyboardButton(
                             "⭕️ JOIN OUR CHANNEL ⭕️", url="https://t.me/SLBotsOfficial")
@@ -52,10 +55,6 @@ async def help(client, message):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("HOME", callback_data="start"),
-                        InlineKeyboardButton("ABOUT", callback_data="about"),
-                    ],
-                    [
                         InlineKeyboardButton(
                             "⭕️ JOIN OUR CHANNEL ⭕️", url="https://t.me/SLBotsOfficial")
                     ]
@@ -74,10 +73,6 @@ async def about(client, message):
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
-                    [
-                        InlineKeyboardButton("HELP", callback_data="help"),
-                        InlineKeyboardButton("HOME", callback_data="start"),
-                    ],
                     [
                         InlineKeyboardButton(
                             "⭕️ JOIN OUR CHANNEL ⭕️", url="https://t.me/SLBotsOfficial")
