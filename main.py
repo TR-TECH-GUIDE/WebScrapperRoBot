@@ -27,10 +27,16 @@ async def start(client, message):
             text=script.START_MSG.format(message.from_user.mention),
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(
+                            "❔ Help", url="http://t.me/WebScrappeBot?start=help"),("♻About", url="http://t.me/WebScrappeBot?start=about")
+                    ],
                     [
                         InlineKeyboardButton(
                             "⭕️ JOIN OUR CHANNEL ⭕️", url="https://t.me/SLBotsOfficial")
                     ]
+                ]
             ),
             reply_to_message_id=message.message_id
         )
@@ -45,6 +51,10 @@ async def help(client, message):
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
+                    [
+                        InlineKeyboardButton(
+                            "♻About", url="http://t.me/WebScrappeBot?start=about")
+                    ]
                     [
                         InlineKeyboardButton(
                             "⭕️ JOIN OUR CHANNEL ⭕️", url="https://t.me/SLBotsOfficial")
