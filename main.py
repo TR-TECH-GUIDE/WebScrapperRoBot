@@ -30,7 +30,7 @@ async def start(client, message):
                 [
                     [
                         InlineKeyboardButton(
-                            "❔ Help", url="http://t.me/WebScrappeBot?start=help")
+                            "❔ Help", url="http://t.me/WebScrappeBot?start=/help")
                     ],
                     [
                         InlineKeyboardButton(
@@ -53,7 +53,7 @@ async def help(client, message):
                 [
                     [
                         InlineKeyboardButton(
-                            "♻About", url="http://t.me/WebScrappeBot?start=about")
+                            "♻About", url="http://t.me/WebScrappeBot?start=/about")
                     ]
                     [
                         InlineKeyboardButton(
