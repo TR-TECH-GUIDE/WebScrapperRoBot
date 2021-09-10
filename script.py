@@ -14,7 +14,8 @@ class script(object):
 Hi I'm WebScrapper,
 I can Scrape a website within seconds. 
 Send me A website link and Get Your results now
-Want To Know More About Web Scraping? Read Help
+Want To Know More About Web Scraping? Read /help
+Want To Know More About Developers? Read /about
 
 © **Powered By** : 
 **@SLBotsOfficial** 👑
