@@ -27,14 +27,12 @@ async def start(client, message):
             text=script.START_MSG.format(message.from_user.mention),
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [
+                    [
                         InlineKeyboardButton(
-                            text="❔ Help", url="http://t.me/WebScrappeBot?start=help"
-                        ),
+                            text="❔ Help", url="http://t.me/WebScrappeBot?start=help"),
                         InlineKeyboardButton(
-                            text="🔧About", url="http://t.me/WebScrappeBot?start=about"
-                        ),
-                ],
+                            text="🔧About", url="http://t.me/WebScrappeBot?start=about"),
+                    ],
                     [
                         InlineKeyboardButton(
                             "⭕️ JOIN OUR CHANNEL ⭕️", url="https://t.me/SLBotsOfficial")
