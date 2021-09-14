@@ -25,3 +25,4 @@ Simple Web scrapper Bot to scrap webpages using Requests, html5lib and Beautiful
   
 # Credits
 [Contributors](https://github.com/TR-TECH-GUIDE/WebScrapperRoBot/graphs/contributors)
+[Fayas](https://github.com/FayasNoushad)
